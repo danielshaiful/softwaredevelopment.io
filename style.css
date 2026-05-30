@@ -1881,3 +1881,77 @@ main section h2::before {
         text-decoration: none;
     }
 }
+
+@media (max-width: 768px) {
+    /* ... kod lain ... */
+
+    #mobileMenu {
+        display: none; 
+        flex-direction: column;
+        /* GUNAKAN VARIABEL INI SUPAYA IA BERTUKAR MENGIKUT TEMA */
+        background-color: var(--bg-secondary); 
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        border-bottom: 1px solid var(--border-color);
+        /* Tambah transisi supaya pertukaran warna nampak lembut */
+        transition: background-color var(--transition-speed);
+    }
+    
+    #mobileMenu a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        /* GUNAKAN VARIABEL INI - JANGAN GUNA WARNA MANUAL */
+        color: var(--text-primary); 
+        font-weight: 600;
+        border-bottom: 1px solid var(--border-color);
+        transition: color var(--transition-speed);
+    }
+}
+
+/* Pastikan ini ada di dalam @media (max-width: 768px) dalam style.css */
+#mobileMenu {
+    display: none; 
+    flex-direction: column;
+    background-color: var(--bg-secondary); /* Auto-tukar warna ikut theme */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+/* Gaya teks supaya cantik dan konsisten */
+#mobileMenu a, 
+#mobileMenu button {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--text-primary); /* Warna teks ikut tema */
+    font-weight: 600;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    border-bottom: 1px solid var(--border-color);
+    transition: color var(--transition-speed);
+}
+
+#mobileMenu a:hover,
+#mobileMenu button:hover {
+    color: var(--brand-color); /* Warna hover ikut tema */
+}
+
+/* Paksa warna teks link dalam mobile menu sentiasa jelas */
+#mobileMenu a {
+    color: var(--text-primary) !important;
+}

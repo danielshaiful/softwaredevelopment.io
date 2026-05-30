@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>Contact - DANIEL SHAIFUL</title>
+        <title>Daniel Shaiful - Portfolio</title>
         <link rel="stylesheet" href="style.css"/>
     </head>
+
     <body>
-        
+
         <nav>
-            <div>
-                <a href="index.html">DANIEL SHAIFUL</a>
+            <div class="nav-container">
+                <a href="index.html" class="logo">DANIEL SHAIFUL</a>
                 <button class="menu-toggle" id="menuToggleBtn">☰</button>
+
+                <!-- Desktop Navigation Menu-->
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
@@ -20,12 +24,17 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div>
+
+                <!-- Right Side: Dark/Light Mode Toggle and Resume Download -->
+                <div class="nav-actions">
                     <button id="themeToggleBtn">Dark/Light Mode</button>
                     <a href="RESUME_MUHAMMAD_DANIEL_BIN_MOHD_SHAIFUL_AZHARI_UNISZA_.pdf" download>Download Resume</a>
                 </div>
             </div>
+            
+            <!-- Mobile Navigation Menu -->
             <div id="mobileMenu" style="display: none;">
+                <button class="mobile-theme-toggle" id="mobileThemeToggleBtn">Dark/Light Mode</button>
                 <a href="index.html">Home</a>
                 <a href="about.html">About Me</a>
                 <a href="future.html">Future</a>

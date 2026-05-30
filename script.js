@@ -1,50 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================================================
-    // 1. LOGIK MOD GELAP (DARK MODE TOGGLE)
+    // 1. LOGIK MOD GELAP (DARK MODE) - Berfungsi untuk Desktop & Mobile
     // ==========================================================================
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
     const htmlElement = document.documentElement;
+    const themeToggleBtns = document.querySelectorAll('#themeToggleBtn, #mobileThemeToggleBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    if (themeToggleBtn) {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-        }
+    // Fungsi untuk tukar tema
+    const toggleTheme = () => {
+        htmlElement.classList.toggle('dark');
+        const isDark = htmlElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Auto-tutup menu mobile bila tema ditukar
+        if (mobileMenu) mobileMenu.style.display = 'none';
+    };
 
-        themeToggleBtn.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
-        });
+    // Set tema asal semasa halaman dimuatkan
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        htmlElement.classList.add('dark');
     }
+
+    // Pasang listener pada semua butang tema
+    themeToggleBtns.forEach(btn => btn.addEventListener('click', toggleTheme));
+
 
     // ==========================================================================
     // 2. LOGIK MENU NAVIGASI MUDAH ALIH (MOBILE MENU)
     // ==========================================================================
-    // Pastikan ID ini sama dengan ID di HTML anda (contoh: 'menuToggleBtn')
     const menuToggleBtn = document.getElementById('menuToggleBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
 
     if (menuToggleBtn && mobileMenu) {
         menuToggleBtn.addEventListener('click', () => {
-            // Tukar antara 'none' dan 'flex'
-            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-                mobileMenu.style.display = 'flex';
-            } else {
+            const isVisible = mobileMenu.style.display === 'flex';
+            mobileMenu.style.display = isVisible ? 'none' : 'flex';
+        });
+
+        // Auto-tutup menu apabila link ditekan
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
                 mobileMenu.style.display = 'none';
-            }
+            });
         });
     }
+
 
     // ==========================================================================
     // 3. LOGIK POPUP DIALOG ARTIKEL BLOG (BLOG MODAL)
     // ==========================================================================
-    const articleModal   = document.getElementById('articleModal');
-    const closeModalBtn  = document.getElementById('closeModalBtn');
-    const modalDate      = document.getElementById('modalDate');
-    const modalTitle     = document.getElementById('modalTitle');
-    const modalBody      = document.getElementById('modalBody');
-    const readButtons    = document.querySelectorAll('.read-post-btn');
+    const articleModal  = document.getElementById('articleModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalDate     = document.getElementById('modalDate');
+    const modalTitle    = document.getElementById('modalTitle');
+    const modalBody     = document.getElementById('modalBody');
+    const readButtons   = document.querySelectorAll('.read-post-btn');
 
     if (articleModal && closeModalBtn && readButtons.length > 0) {
         articleModal.style.display = 'none';
@@ -62,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalDate.innerText  = dateEl.innerText;
                     modalTitle.innerText = titleEl.innerText;
                     modalBody.innerHTML  = contentEl.innerHTML;
-
                     articleModal.style.display   = 'flex';
                     document.body.style.overflow = 'hidden';
                 }
