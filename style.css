@@ -1847,3 +1847,37 @@ main section h2::before {
 
     #hero h1 { font-size: 2.2rem; }
 }
+
+/* Sembunyikan butang toggle pada desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Paparkan butang dan ubah suai menu untuk mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Tunjukkan butang */
+    }
+    
+    /* Sembunyikan menu desktop asal di telefon */
+    .nav-container ul {
+        display: none;
+    }
+
+    #mobileMenu {
+        flex-direction: column;
+        background-color: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    #mobileMenu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+}
