@@ -1,7 +1,7 @@
- CSD34203: Special Topic in Software Development
- Student Name: Muhammad Daniel bin Mohd.Shaiful Azhari
- Matric Number: 076908
- Lecturer Name: Dr. Hasni binti Hassan
+ - CSD34203: Special Topic in Software Development
+ - Student Name: Muhammad Daniel bin Mohd.Shaiful Azhari
+ - Matric Number: 076908
+ - Lecturer Name: Dr. Hasni binti Hassan
  
 1. Project title
    - Personal Blog Portfolio
