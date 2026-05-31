@@ -12,7 +12,9 @@
 
 3. Features
    - Home Page: Brief personal introduction.
-   - About Page: Background on my education and skills.
+   - About Me Page: Background on my education and skills.
+   - Future Career Page : My career aspiration, target roles, and 2-5 years development plan.
+   - Projects Page: My technical project showcase which include blog that highligthing my development process and technologies used.
    - Blog Page: Displays 2–3 posts regarding my learning experiences.
    - Contact Page: Information to get in touch with me.
    - Responsive: Mobile-friendly website design.
