@@ -30,10 +30,10 @@
 8. How to run the project
    - To run this project locally, please follow these steps:
    1. Ensure you have Git installed on your computer.
-   2. Clone this repository: git clone [https://github.com/danielshaiful/github.io](https://github.com/danielshaiful/github.io)
+   2. Clone this repository: git clone https://github.com/danielshaiful/softwaredevelopment.io.git
    3. Open the project folder in VS Code.
    4. Open the index.html file using your preferred web browser.
 
 9. Github Link/Website Link
-   - GitHub Repository: https://github.com/danielshaiful/github.io
-   - Live Demo: https://danielshaiful.github.io/ (GitHub Pages) 
+   - GitHub Repository: https://github.com/danielshaiful/softwaredevelopment.io
+   - Live Demo: https://danielshaiful.github.io/softwaredevelopment.io/ (GitHub Pages) 
